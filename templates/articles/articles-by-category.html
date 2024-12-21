@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block title %} Exploits Articles - Astrum IT Academy H4ck3rs {% endblock %}
+
+{% block content %}
+    <div class="container">
+        <h2 class="category-title">Exploits Articles</h2>
+
+        <div class="article-list">
+            {% if articles %}
+                {% for article in articles %}
+                    <article class="post">
+                        <h3 class="post-title">{{ article.title }}</h3>
+                        <p class="post-meta">
+                            <span class="author">By: {{ article.author }}</span>
+                            <span class="date">Date: {{ article.date }}</span>
+                        </p>
+                        <p class="post-excerpt">{{ article.short_content }}</p>
+                        <a href="{{ article.get_detail_url }}" class="read-more">Read More</a>
+                    </article>
+                {% endfor %}
+            {% else %}
+                <p class="no-articles">No articles available at the moment. Please check back later.</p>
+            {% endif %}
+        </div>
+    </div>
+{% endblock %}

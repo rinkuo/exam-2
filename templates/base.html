@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Astrum IT Academy H4ck3rs{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+</head>
+<body class="page-container">
+    <div class="content-wrap">
+        {# HEADER - Included header for global elements like branding or navigation #}
+        {% include 'includes/header.html' %}
+
+        {# NAVIGATION - Site-wide menu or navigation links #}
+        {% include 'includes/nav.html' %}
+
+        {# CONTENT - The dynamic section that will change for each page #}
+        {% block content %} {% endblock %}
+    </div>
+
+    {# FOOTER - Site footer with copyright, contact info, etc. #}
+    {% include 'includes/footer.html' %}
+</body>
+</html>

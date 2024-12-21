@@ -1,0 +1,9 @@
+<nav>
+    <a href="{% url 'home' %}" class="{% if request.path == '/' %}active{% endif %}">Home</a>
+    <a href="{% url 'articles:articles-by-category' 'exploits' %}" class="{% if 'exploits' in request.path %}active{% endif %}">Exploits</a>
+    <a href="{% url 'articles:articles-by-category' 'tools' %}" class="{% if 'tools' in request.path %}active{% endif %}">Tools</a>
+    <a href="{% url 'articles:articles-by-category' 'ctf' %}" class="{% if 'ctf' in request.path %}active{% endif %}">CTF</a>
+    <a href="{% url 'articles:articles-by-category' 'tutorials' %}" class="{% if 'tutorials' in request.path %}active{% endif %}">Tutorials</a>
+    <a href="{% url 'articles:articles-by-category' 'news' %}" class="{% if 'news' in request.path %}active{% endif %}">News</a>
+    <a href="{% url 'articles:add-article' %}" class="{% if 'create' in request.path %}active{% endif %}">Add New Article</a>
+</nav>
